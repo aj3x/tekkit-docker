@@ -1,9 +1,9 @@
 services:
   tekkit-server:
-    build: .
+    image: ghcr.io/aj3x/tekkit-server:latest
     ports:
       - "25565:25565/udp"
       - "25565:25565/tcp"
     volumes:
-      - ./world:/minecraft/world
-      - ./server.properties:/minecraft/server.properties
+      - /docker/tekkit/world:/minecraft/world
+      - /docker/tekkit/server.properties:/minecraft/server.properties
